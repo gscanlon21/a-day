@@ -12,7 +12,7 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<SharedContext>(options => options.UseNpgsql(sharedContext, options =>
         {
             options.UseQuerySplittingBehavior(QuerySplittingBehavior.SingleQuery);
-            
+
             if (migrations)
             {
                 options.MigrationsAssembly(typeof(SharedContext).Assembly.GetName().Name);

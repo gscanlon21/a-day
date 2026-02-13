@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ADay.Data.Entities.Footnote;
+﻿using ADay.Data.Entities.Footnote;
+using Microsoft.EntityFrameworkCore;
 
 namespace ADay.Data;
 
