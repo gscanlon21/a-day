@@ -1,9 +1,9 @@
-﻿using Shared.Core.Models;
+﻿using ADay.Core.Models.Footnote;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
-namespace Shared.Data.Entities.Footnote;
+namespace ADay.Data.Entities.Footnote;
 
 /// <summary>
 /// A collection of sage advice.

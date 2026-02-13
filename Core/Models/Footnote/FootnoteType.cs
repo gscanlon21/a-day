@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Shared.Core.Models;
+namespace ADay.Core.Models.Footnote;
 
 
 [Flags]

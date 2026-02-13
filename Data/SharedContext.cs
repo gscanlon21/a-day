@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Shared.Data.Entities.Footnote;
+using ADay.Data.Entities.Footnote;
 
-namespace Shared.Data;
+namespace ADay.Data;
 
 /// <summary>
 /// https://mehdi.me/ambient-dbcontext-in-ef6/
 /// </summary>
-public class ComContext : DbContext
+public class SharedContext : DbContext
 {
     [Obsolete("Public parameterless constructor required for EF Core.", error: true)]
-    public ComContext() : base() { }
-    public ComContext(DbContextOptions<ComContext> context) : base(context) { }
+    public SharedContext() : base() { }
+    public SharedContext(DbContextOptions<SharedContext> context) : base(context) { }
 
     public DbSet<Footnote> Footnotes { get; set; } = null!;
 
