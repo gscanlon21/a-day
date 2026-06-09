@@ -69,46 +69,62 @@ public enum FootnoteType
     /// <summary>
     /// Fitness affirmations. 
     /// 
-    /// sa. I'm getting stronger after every workout
+    /// sa. I'm getting stronger after every workout.
     /// </summary>
     [Display(Name = "Fitness Affirmations")]
     FitnessAffirmations = 1 << 8, // 256
 
     /// <summary>
-    /// Fitness advice and tips. 
+    /// Cooking advice and tips. 
     /// 
-    /// sa. Take five to 10 minutes to warm up and cool down properly.
+    /// sa. Roll a lime around on a counter before cutting to get more juice.
     /// </summary>
     [Display(Name = "Cooking Tips")]
     CookingTips = 1 << 9, // 512
 
     /// <summary>
-    /// Life advice and tips.
+    /// Cooking facts. 
     /// 
-    /// sa. Practicing everyday mindfulness can improve your memory and concentration skills....
+    /// sa. A sharp knife is safer than dull one.
     /// </summary>
-    [Display(Name = "Ingredient Tips")]
-    IngredientTips = 1 << 10, // 1024
+    [Display(Name = "Cooking Facts")]
+    CookingFacts = 1 << 10, // 1024
 
     /// <summary>
-    /// Life motivation.
+    /// Digestion advice and tips.
+    /// 
+    /// sa. Chew your food at least 20 times before swallowing.
+    /// </summary>
+    [Display(Name = "Digestion Tips")]
+    DigestionTips = 1 << 11, // 2048
+
+    /// <summary>
+    /// Digestion facts.
+    /// 
+    /// sa. Fat needs to be suspended in water in an “emulsion” that starts with chewing.
+    /// </summary>
+    [Display(Name = "Digestion Facts")]
+    DigestionFacts = 1 << 12, // 4096
+
+    /// <summary>
+    /// Cooking motivation.
     /// 
     /// sa. Never give up!
     /// </summary>
     [Display(Name = "Cooking Motivation")]
-    CookingMotivation = 1 << 11, // 2048
+    CookingMotivation = 1 << 13, // 8192
 
     /// <summary>
-    /// Life affirmations. 
+    /// Cooking affirmations. 
     /// 
-    /// sa. I'm a thoughtful and interesting person.
+    /// sa. My curiosity is stronger than my fear.
     /// </summary>
     [Display(Name = "Cooking Affirmations")]
-    CookingAffirmations = 1 << 12, // 4096
+    CookingAffirmations = 1 << 14, // 16384
 
     System = All & ~Custom, // Exerything except Custom.
 
     All = HealthTips | HealthFacts | GoodVibes | Mindfulness | Custom
         | FitnessTips | FitnessFacts | FitnessMotivation | FitnessAffirmations
-        | CookingAffirmations | CookingMotivation | CookingTips | IngredientTips
+        | CookingTips | CookingFacts | DigestionTips | DigestionFacts | CookingMotivation | CookingAffirmations
 }
