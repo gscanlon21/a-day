@@ -1,74 +1,51 @@
-﻿namespace ADay.Core.Models.Theme;
+﻿using ADay.Core.Consts;
+using System.Drawing;
+
+namespace ADay.Core.Models.Theme;
 
 /// <summary>
-/// Color schemes.
+/// Color themes.
 /// </summary>
 public enum Theme
 {
-    /// <summary>
-    /// Text.
-    /// </summary>
     None = 0,
-
-    /// <summary>
-    /// Red.
-    /// </summary>
     Red = 1,
-
-    /// <summary>
-    /// Orange.
-    /// </summary>
     Orange = 2,
-
-    /// <summary>
-    /// Green.
-    /// </summary>
     Green = 3,
-
-    /// <summary>
-    /// Teal.
-    /// </summary>
     Teal = 4,
-
-    /// <summary>
-    /// Blue.
-    /// </summary>
     Blue = 5,
-
-    /// <summary>
-    /// Violet.
-    /// </summary>
     Violet = 6,
-
-    /// <summary>
-    /// Slate.
-    /// </summary>
-    Slate = 7,
+    Fuchsia = 7,
 }
 
 public static class RecipeThemeExtensions
 {
+    /// <summary>
+    /// Get the foreground color associated with this theme.
+    /// </summary>
     public static string Color(this Theme theme) => theme switch
     {
         Theme.Red => "palevioletred",
         Theme.Orange => "lightsalmon",
-        Theme.Green => "lightgreen",
-        Theme.Teal => "teal",
+        Theme.Green => "limegreen",
+        Theme.Teal => "lightseagreen",
         Theme.Blue => "lightskyblue",
         Theme.Violet => "mediumpurple",
-        Theme.Slate => "slategray",
+        Theme.Fuchsia => "fuchsia",
         _ => "currentColor"
     };
 
-    public static string BackgroundColor(this Theme theme) => theme switch
+    /// <summary>
+    /// Get the background color associated with this theme.
+    /// </summary>
+    public static string BackgroundColor(this Theme theme)
     {
-        Theme.Red => "rgba(250,200,200,.1)",
-        Theme.Orange => "rgba(250,200,150,.1)",
-        Theme.Green => "rgba(200,250,200,.1)",
-        Theme.Teal => "rgba(200,225,225,.1)",
-        Theme.Blue => "rgba(200,200,250,.1)",
-        Theme.Violet => "rgba(250,200,250,.1)",
-        Theme.Slate => "rgba(200,225,250,.1)",
-        _ => "transparent"
-    };
+        if (ColorConsts.NamedColors.TryGetValue(theme.Color(), out string? hex))
+        {
+            var color = hex == null ? System.Drawing.Color.Empty : ColorTranslator.FromHtml(hex);
+            return $"rgba({color.R},{color.G},{color.B},{ColorConsts.BackgroundOpacity})";
+        }
+
+        return "transparent";
+    }
 }
