@@ -2,7 +2,6 @@
 
 namespace ADay.Core.Models.Footnote;
 
-
 public interface IFootnote
 {
     int Id { get; init; }
@@ -17,9 +16,4 @@ public interface IFootnote
     /// Either a link or a name that was the reference of the note.
     /// </summary>
     string? Source { get; init; }
-
-    /// <summary>
-    /// Affirmations vs Fitness Tips.
-    /// </summary>
-    FootnoteType Type { get; init; }
 }

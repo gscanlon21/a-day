@@ -9,12 +9,6 @@ public enum FootnoteType
     None = 0,
 
     /// <summary>
-    /// User defined footnotes.
-    /// </summary>
-    [Display(Name = "Custom")]
-    Custom = 1 << 0, // 1
-
-    /// <summary>
     /// Good vibes. Re-parenting.
     /// 
     /// sa. You are beautiful!
@@ -122,9 +116,7 @@ public enum FootnoteType
     [Display(Name = "Cooking Affirmations")]
     CookingAffirmations = 1 << 14, // 16384
 
-    System = All & ~Custom, // Exerything except Custom.
-
-    All = HealthTips | HealthFacts | GoodVibes | Mindfulness | Custom
+    All = HealthTips | HealthFacts | GoodVibes | Mindfulness
         | FitnessTips | FitnessFacts | FitnessMotivation | FitnessAffirmations
         | CookingTips | CookingFacts | DigestionTips | DigestionFacts | CookingMotivation | CookingAffirmations
 }
